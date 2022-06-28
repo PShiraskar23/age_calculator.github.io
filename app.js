@@ -55,7 +55,16 @@ btn.addEventListener("click",(eve)=>{
             month.firstElementChild.textContent=targetMonth
             year.firstElementChild.textContent=targetYear
 
-        //3rd condition -input month is greater than current month and input date is greater than or euqal to current date
+        //3rd condition -input month is smaller than current month and input date is greater than current date
+        }else if(currentMonth>inputMonth && currentDate<inputDate ){
+            const targetMonth=eval( (currentMonth-1)-inputMonth)
+            const targetYear=eval(currentYear-inputYear)
+            month.style.display="inline-block"
+            year.style.display="inline-block"
+            month.firstElementChild.textContent=targetMonth
+            year.firstElementChild.textContent=targetYear
+
+        //4th condition -input month is greater than current month and input date is greater than or euqal to current date
         }else if(currentMonth<inputMonth && currentDate<=inputDate ){
             const targetMonth=eval(((currentMonth-1)+12)-inputMonth)
             const targetYear=eval((currentYear-1)-inputYear)
@@ -64,7 +73,7 @@ btn.addEventListener("click",(eve)=>{
             month.firstElementChild.textContent=targetMonth
             year.firstElementChild.textContent=targetYear
 
-        //4th condition - input month is greater than or equal to current month and input date is greater than or euqal to current date
+        //5th condition - input month is greater than or equal to current month and input date is greater than or euqal to current date
         }else if(currentMonth<=inputMonth && currentDate<=inputDate ){
             const targetMonth=eval(((currentMonth-1)+12)-inputMonth)
             const targetYear=eval((currentYear-1)-inputYear)
@@ -73,7 +82,7 @@ btn.addEventListener("click",(eve)=>{
             month.firstElementChild.textContent=targetMonth
             year.firstElementChild.textContent=targetYear
 
-        //5th condition -  input date and input month both are smaller than current date and current month
+        //6th condition -  input date and input month both are smaller than current date and current month
         }else{
             const targetMonth=eval(currentMonth-inputMonth)
             const targetYear=eval(currentYear-inputYear)
