@@ -74,7 +74,8 @@ btn.addEventListener("click",(eve)=>{
             year.firstElementChild.textContent=targetYear
 
         //5th condition - input month is greater than or equal to current month and input date is greater than or euqal to current date
-        }else if(currentMonth<=inputMonth && currentDate<=inputDate ){
+        // }else if(currentMonth<=inputMonth && currentDate<=inputDate ){
+        }else if(currentMonth<inputMonth && currentDate<=inputDate || currentMonth==inputMonth && currentDate<inputDate){
             const targetMonth=eval(((currentMonth-1)+12)-inputMonth)
             const targetYear=eval((currentYear-1)-inputYear)
             month.style.display="inline-block"
